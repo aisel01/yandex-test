@@ -7,11 +7,13 @@
     cm(selector)
     Тип: Selector
     Строка, содержащая выражение селектора
----
+
+
     cm(element)
     Тип: Element
     DOM элемент для переноса в cm объект.
----
+
+
     cm(elementArray)
     Тип: Array
     Массив, содержащий набор элементов DOM для переноса в объект cm.
@@ -22,25 +24,25 @@
 
 # .addClass(className)
 
-`className` - имя класса(или имена классов, через пробел), которое требуется добавить к связанным элементам. Возвращает объект `cm`.
+`className` - имя класса(или имена классов, через пробел), которое требуется добавить к элементам. Возвращает объект `cm`.
 
-    cm("p").addClass("myClass yourClass");
+    cm('p').addClass('myClass yourClass');
 
 # .removeClass(className)
 
 `className` - строка, содержащая имена классов, разделенных пробелами, которые требуется удалить у каждого элемента в наборе. Возвращает объект `cm`.
 
-     cm("p").removeClass("myClass yourClass");
+     cm('p').removeClass('myClass yourClass');
 
 # .toggleClass(className)
 `className` - строка, содержащая имена классов, разделенных пробелами
 
 Добавляет или удаляет каждый из заданных классов по принципу переключателя (добавляет, если элемент не содержит класса, и удаляет, если класс есть). Возвращает объект `cm`.
 
-     cm("p").toggleClass("myClass yourClass");
+     cm('p').toggleClass('myClass yourClass');
 
 # .replaceClass(oldClass, newClass)
 
 Заменяет класс `oldClass` на класс `newClass` в каждом элементе набора. Возвращает объект `cm`.
 
-    cm("p").replaceClass('oldClass', 'newClass');
+    cm('p').replaceClass('oldClass', 'newClass');
