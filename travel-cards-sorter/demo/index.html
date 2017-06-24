@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Travel Cards</title>
+</head>
+<body>
+	<script src="../travel-cards-sorter.js"></script>
+	<script>
+	var cards = [
+		{
+			originPoint: 'Madrid',
+			targetPoint: 'Barselona',
+			transport: {
+				type: 'train',
+				number: '78A',
+				seat: '45B'
+			}
+		},
+		{
+			originPoint: 'Gerona Airport',
+			targetPoint: 'Stockholm',
+			transport: {
+				type: 'flight',
+				number: 'SK455',
+				seat: '3A',
+				gate: '45B',
+				baggageDrop: {
+					auto: false,
+					value: '344'
+				}
+			}
+		},
+		{
+			originPoint: 'Barselona',
+			targetPoint: 'Gerona Airport',
+			transport: {
+				type: 'airport bus',
+			}
+		},
+		{
+			originPoint: 'Stockholm',
+			targetPoint: 'New York JFK',
+			transport: {
+				type: 'flight',
+				number: 'SK22',
+				seat: '7B',
+				gate: '22',
+				baggageDrop: {
+					auto: true
+				}
+			}
+		}
+	];
+
+	var travelCards = new TravelCardsSorter(cards);
+
+	travelCards.sort();
+
+	var instructions = travelCards.getInstructions();
+
+	var ul = document.createElement('ul');
+
+	instructions.forEach(function(instruction) {
+		var li = document.createElement('li');
+		li.innerText = instruction;
+		ul.appendChild(li);
+	});
+
+	document.body.appendChild(ul);
+	console.log(instructions);
+
+	</script>
+</body>
+</html>
